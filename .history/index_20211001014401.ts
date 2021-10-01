@@ -1,21 +1,25 @@
-import app from './app';
-import debug from 'debug';
-debug('assignment1:server');
-import http from 'http';
-import { HttpError } from 'http-errors';
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var app = require('../app');
+var debug = require('debug')('assignment1:server');
+var http = require('http');
 
 /**
  * Get port from environment and store in Express.
  */
 
-const port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
  * Create HTTP server.
  */
 
-const server = http.createServer(app);
+var server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -25,13 +29,11 @@ server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
-/*
- Error fixed after TS switch. TS requires value type followed by ":"
- let myVariable: string = "";
- const myConstant: number = 0;
+/**
+ * Normalize a port into a number, string, or false.
  */
 
-function normalizePort(val:string): number | string | boolean {
+function normalizePort(val) {
   var port = parseInt(val, 10);
 
   if (isNaN(port)) {
@@ -51,7 +53,7 @@ function normalizePort(val:string): number | string | boolean {
  * Event listener for HTTP server "error" event.
  */
 
-function onError(error:HttpError) {
+function onError(error) {
   if (error.syscall !== 'listen') {
     throw error;
   }

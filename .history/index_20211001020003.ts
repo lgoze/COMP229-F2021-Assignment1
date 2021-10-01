@@ -2,7 +2,6 @@ import app from './app';
 import debug from 'debug';
 debug('assignment1:server');
 import http from 'http';
-import { HttpError } from 'http-errors';
 
 /**
  * Get port from environment and store in Express.
@@ -25,13 +24,11 @@ server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
-/*
- Error fixed after TS switch. TS requires value type followed by ":"
- let myVariable: string = "";
- const myConstant: number = 0;
+/**
+ * Normalize a port into a number, string, or false.
  */
 
-function normalizePort(val:string): number | string | boolean {
+function normalizePort(val) {
   var port = parseInt(val, 10);
 
   if (isNaN(port)) {
@@ -51,7 +48,7 @@ function normalizePort(val:string): number | string | boolean {
  * Event listener for HTTP server "error" event.
  */
 
-function onError(error:HttpError) {
+function onError(error) {
   if (error.syscall !== 'listen') {
     throw error;
   }
