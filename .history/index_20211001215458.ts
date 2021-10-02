@@ -33,7 +33,7 @@ server.on('listening', onListening);
  */
 
 function normalizePort(val:string): number | string | boolean {
-  let port = parseInt(val, 10);
+  var port = parseInt(val, 10);
 
   if (isNaN(port)) {
     // named pipe
@@ -52,7 +52,7 @@ function normalizePort(val:string): number | string | boolean {
  * Event listener for HTTP server "error" event.
  */
 
-function onError(error:createError.HttpError): void {
+function onError(error:createError.HttpError) {
   if (error.syscall !== 'listen') {
     throw error;
   }
@@ -80,9 +80,9 @@ function onError(error:createError.HttpError): void {
  * Event listener for HTTP server "listening" event.
  */
 
-function onListening(): void {
-  let addr = server.address();
-  let bind = typeof addr === 'string'
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);

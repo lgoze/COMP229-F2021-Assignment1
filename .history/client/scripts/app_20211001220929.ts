@@ -3,7 +3,7 @@
 
 (function(){
 
-    function start(): void {
+    function start() {
         console.log('App Started')
     }
         
