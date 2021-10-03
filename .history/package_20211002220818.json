@@ -1,6 +1,6 @@
 {
   "name": "assignment1",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "nodemon index.js"
@@ -8,6 +8,7 @@
   "engines": {
     "node": "^14.00.0",
     "npm": "^6.0,0"
+
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
@@ -31,17 +32,5 @@
     "@types/jquery": "^3.5.6",
     "@types/morgan": "^1.9.3",
     "nodemon": "^2.0.13"
-  },
-  "description": "Assignment1 Complete",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lgoze/COMP229-F2021-Assignment1.git"
-  },
-  "author": "Lester Dan Goze",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/lgoze/COMP229-F2021-Assignment1/issues"
-  },
-  "homepage": "https://github.com/lgoze/COMP229-F2021-Assignment1#readme"
+  }
 }
