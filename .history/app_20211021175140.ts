@@ -10,13 +10,13 @@ import indexRouter from './routes/index';
 //const indexRouter = require('./routes/index');
 
 //Instantiate Mongo
-mongoose.connect('mongodb://localhost:27017/book_store');
+mongoose.connect("mongodb://localhost:27017/books")
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
 db.once('open', function(){
     console.log("connected to MongoDB at localhost:27017")
-});
+})
 
 
 //Instantiate Express
